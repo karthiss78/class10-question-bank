@@ -1,0 +1,502 @@
+{
+  "subject": "Maths",
+  "source": "Tamil Nadu Class 10 Mathematics 2025 textbook - textbook-style practice set",
+  "chapters": [
+    {
+      "name": "Relations and Functions",
+      "questions": [
+        {
+          "mark": 1,
+          "q": "If A = {1, 2} and B = {3, 4}, how many elements are in A x B?",
+          "options": [
+            "4",
+            "2",
+            "6",
+            "8"
+          ],
+          "a": "A x B has 2 x 2 = 4 ordered pairs. Correct answer: A. 4"
+        },
+        {
+          "mark": 1,
+          "q": "If f(x) = 2x + 3, find f(4).",
+          "options": [
+            "11",
+            "8",
+            "9",
+            "14"
+          ],
+          "a": "f(4) = 2(4) + 3 = 11. Correct answer: A. 11"
+        },
+        {
+          "mark": 2,
+          "q": "Let f(x) = 3x - 1. Find f(5).",
+          "a": "f(5) = 3(5) - 1 = 15 - 1 = 14."
+        },
+        {
+          "mark": 2,
+          "q": "If f = {(1,2), (2,4), (3,6)}, write the domain and range.",
+          "a": "Domain = {1,2,3}. Range = {2,4,6}."
+        },
+        {
+          "mark": 3,
+          "q": "If f(x) = x + 2 and g(x) = 2x, find (fog)(3).",
+          "a": "g(3)=2(3)=6. f(g(3))=f(6)=6+2=8. Therefore (fog)(3)=8."
+        },
+        {
+          "mark": 3,
+          "q": "Check whether {(1,3),(2,3),(3,4)} is a function.",
+          "a": "Each first element 1,2,3 has only one image. Therefore it is a function. It is many-one because 1 and 2 have the same image 3."
+        },
+        {
+          "mark": 5,
+          "q": "If f(x)=2x+1 and g(x)=x-3, find fog and gof.",
+          "a": "fog(x)=f(g(x))=f(x-3)=2(x-3)+1=2x-6+1=2x-5. gof(x)=g(f(x))=g(2x+1)=2x+1-3=2x-2."
+        },
+        {
+          "mark": 5,
+          "q": "Let A={1,2,3}. If f:A→A is given by f={(1,2),(2,3),(3,1)}, check whether f is one-one and onto.",
+          "a": "Images are {2,3,1}. No two elements have the same image, so f is one-one. Range={1,2,3}=A, so f is onto. Hence f is bijective."
+        },
+        {
+          "mark": 8,
+          "q": "Explain domain, codomain, range and function using f={(1,2),(2,4),(3,6)} from A={1,2,3} to B={2,4,6,8}.",
+          "a": "Given A={1,2,3}, B={2,4,6,8}, f={(1,2),(2,4),(3,6)}. Domain is the set of first elements: {1,2,3}. Codomain is the target set B={2,4,6,8}. Range is the set of actual images: {2,4,6}. Since every element of A has exactly one image in B, f is a function. It is not onto because 8 in B has no preimage."
+        }
+      ]
+    },
+    {
+      "name": "Numbers and Sequences",
+      "questions": [
+        {
+          "mark": 1,
+          "q": "Find the 10th term of the AP 3, 7, 11, ...",
+          "options": [
+            "39",
+            "40",
+            "43",
+            "36"
+          ],
+          "a": "a=3, d=4. a10 = a+9d = 3+36=39. Correct answer: A. 39"
+        },
+        {
+          "mark": 1,
+          "q": "HCF of 24 and 36 is",
+          "options": [
+            "12",
+            "6",
+            "24",
+            "36"
+          ],
+          "a": "Factors common highest = 12. Correct answer: A. 12"
+        },
+        {
+          "mark": 2,
+          "q": "Find the 15th term of the AP 5, 8, 11, ...",
+          "a": "a=5, d=3. a15 = a+14d = 5+42 = 47."
+        },
+        {
+          "mark": 2,
+          "q": "Find the sum of first 20 natural numbers.",
+          "a": "Sum = n(n+1)/2 = 20(21)/2 = 210."
+        },
+        {
+          "mark": 3,
+          "q": "Find the sum of first 12 terms of AP 2, 5, 8, ...",
+          "a": "a=2, d=3, n=12. S12=n/2[2a+(n-1)d] = 12/2[4+11(3)] = 6(37)=222."
+        },
+        {
+          "mark": 3,
+          "q": "Using Euclid division algorithm, find HCF of 65 and 117.",
+          "a": "117 = 65 x 1 + 52. 65 = 52 x 1 + 13. 52 = 13 x 4 + 0. HCF = 13."
+        },
+        {
+          "mark": 5,
+          "q": "A milkman has 175 litres cow milk and 105 litres buffalo milk. Find the largest capacity container to measure both exactly.",
+          "a": "Largest container capacity = HCF(175,105). 175=105x1+70, 105=70x1+35, 70=35x2+0. HCF=35 litres."
+        },
+        {
+          "mark": 5,
+          "q": "Find the 12th term from the end of AP -2, -4, -6, ..., -100.",
+          "a": "AP is -2,-4,...,-100. From the end, reverse AP is -100,-98,-96,... d=2. 12th term from end = -100 + 11(2) = -78."
+        },
+        {
+          "mark": 8,
+          "q": "Find the sum of the first 25 odd natural numbers and prove the general result used.",
+          "a": "Sum of first n odd natural numbers = n². For n=25, sum = 25² = 625. General proof: 1=1², 1+3=4=2², 1+3+5=9=3². In general, nth odd number is 2n-1. Sum = n/2[2(1)+(n-1)2] = n/2[2+2n-2] = n²."
+        }
+      ]
+    },
+    {
+      "name": "Algebra",
+      "questions": [
+        {
+          "mark": 1,
+          "q": "The roots of x² - 5x + 6 = 0 are",
+          "options": [
+            "2, 3",
+            "1, 6",
+            "-2, -3",
+            "5, 6"
+          ],
+          "a": "x² -5x+6=(x-2)(x-3). Roots are 2 and 3."
+        },
+        {
+          "mark": 1,
+          "q": "Degree of polynomial 3x² + 2x - 1 is",
+          "options": [
+            "2",
+            "1",
+            "3",
+            "0"
+          ],
+          "a": "Highest power is 2. Correct answer: A. 2"
+        },
+        {
+          "mark": 2,
+          "q": "Solve x² - 9 = 0.",
+          "a": "x²=9, so x=±3."
+        },
+        {
+          "mark": 2,
+          "q": "Factorise x² + 7x + 12.",
+          "a": "x²+7x+12=(x+3)(x+4)."
+        },
+        {
+          "mark": 3,
+          "q": "Solve x² - 7x + 10 = 0.",
+          "a": "x² -7x +10 = (x-5)(x-2)=0. Therefore x=5 or x=2."
+        },
+        {
+          "mark": 3,
+          "q": "Find the GCD of x²-1 and x²-3x+2.",
+          "a": "x²-1=(x-1)(x+1). x²-3x+2=(x-1)(x-2). Common factor is x-1. GCD=x-1."
+        },
+        {
+          "mark": 5,
+          "q": "Solve 2x² - 5x + 3 = 0 by factorisation.",
+          "a": "2x²-5x+3=0. Split -5x as -2x-3x. 2x²-2x-3x+3=0. 2x(x-1)-3(x-1)=0. (x-1)(2x-3)=0. x=1 or x=3/2."
+        },
+        {
+          "mark": 5,
+          "q": "Form a quadratic equation whose roots are 4 and -3.",
+          "a": "Sum of roots = 1. Product = -12. Equation: x² - (sum)x + product = 0. x² - x - 12 = 0."
+        },
+        {
+          "mark": 8,
+          "q": "A rectangular park has perimeter 320 m and area 4800 m². Find its dimensions.",
+          "a": "Let length=l and breadth=b. 2(l+b)=320 so l+b=160. Area lb=4800. Let l=x, b=160-x. x(160-x)=4800. x²-160x+4800=0. Divide by 1: x²-160x+4800=0. Factor: discriminant = 160²-4(4800)=25600-19200=6400, √6400=80. x=(160±80)/2 gives 120 or 40. Dimensions are 120 m and 40 m."
+        }
+      ]
+    },
+    {
+      "name": "Geometry",
+      "questions": [
+        {
+          "mark": 1,
+          "q": "A tangent to a circle is perpendicular to the radius at the point of contact.",
+          "options": [
+            "True",
+            "False",
+            "Sometimes",
+            "Cannot say"
+          ],
+          "a": "True. This is the tangent-radius theorem."
+        },
+        {
+          "mark": 1,
+          "q": "From an external point, how many tangents can be drawn to a circle?",
+          "options": [
+            "2",
+            "1",
+            "0",
+            "Infinite"
+          ],
+          "a": "Two tangents can be drawn from an external point."
+        },
+        {
+          "mark": 2,
+          "q": "If tangents PA and PB are drawn from point P to a circle, what is the relation between PA and PB?",
+          "a": "Tangents drawn from an external point to a circle are equal. Therefore PA = PB."
+        },
+        {
+          "mark": 2,
+          "q": "State the tangent-radius theorem.",
+          "a": "The tangent at any point of a circle is perpendicular to the radius drawn to the point of contact."
+        },
+        {
+          "mark": 3,
+          "q": "A point P is 13 cm from centre O of a circle of radius 5 cm. Find tangent length PA.",
+          "a": "OA=5, OP=13, OA ⟂ PA. PA²=OP²-OA²=13²-5²=169-25=144. PA=12 cm."
+        },
+        {
+          "mark": 3,
+          "q": "In similar triangles, if scale factor is 2:3 and smaller side is 8 cm, find corresponding larger side.",
+          "a": "Ratio smaller:larger = 2:3. Larger side = 8 x 3/2 = 12 cm."
+        },
+        {
+          "mark": 5,
+          "q": "In triangle ABC, DE is parallel to BC. If AD=6 cm, DB=4 cm and AE=9 cm, find EC.",
+          "a": "By Basic Proportionality Theorem, AD/DB = AE/EC. 6/4 = 9/EC. 6EC = 36. EC = 6 cm."
+        },
+        {
+          "mark": 5,
+          "q": "From point P, two tangents PA and PB are drawn to a circle. If PA=7 cm, find PB and justify.",
+          "a": "Tangents from an external point are equal. Therefore PA=PB. Given PA=7 cm, PB=7 cm."
+        },
+        {
+          "mark": 8,
+          "q": "Prove that tangents drawn from an external point to a circle are equal.",
+          "a": "Let PA and PB be tangents from external point P to a circle with centre O, touching at A and B. Join OA, OB and OP. Radius is perpendicular to tangent, so OA ⟂ PA and OB ⟂ PB. In right triangles OAP and OBP, OA=OB (radii), OP is common, and both are right triangles. By RHS congruence, ΔOAP ≅ ΔOBP. Hence PA=PB."
+        }
+      ]
+    },
+    {
+      "name": "Coordinate Geometry",
+      "questions": [
+        {
+          "mark": 1,
+          "q": "Distance between (0,0) and (3,4) is",
+          "options": [
+            "5",
+            "7",
+            "1",
+            "25"
+          ],
+          "a": "Distance = √(3²+4²)=5."
+        },
+        {
+          "mark": 1,
+          "q": "Slope of line y = 2x + 5 is",
+          "options": [
+            "2",
+            "5",
+            "-2",
+            "1/2"
+          ],
+          "a": "In y=mx+c, slope m=2."
+        },
+        {
+          "mark": 2,
+          "q": "Find the midpoint of A(2,4) and B(6,8).",
+          "a": "Midpoint = ((2+6)/2, (4+8)/2) = (4,6)."
+        },
+        {
+          "mark": 2,
+          "q": "Find slope of line joining (1,2) and (3,6).",
+          "a": "Slope = (6-2)/(3-1)=4/2=2."
+        },
+        {
+          "mark": 3,
+          "q": "Find distance between A(-1,2) and B(5,10).",
+          "a": "Distance = √[(5+1)²+(10-2)²] = √(6²+8²)=√100=10 units."
+        },
+        {
+          "mark": 3,
+          "q": "Find equation of line with slope 3 and y-intercept 2.",
+          "a": "Equation y=mx+c. m=3, c=2. Therefore y=3x+2."
+        },
+        {
+          "mark": 5,
+          "q": "Find equation of line passing through (2,3) and slope 4.",
+          "a": "Using y-y1=m(x-x1): y-3=4(x-2). y-3=4x-8. y=4x-5."
+        },
+        {
+          "mark": 5,
+          "q": "Find area of triangle with vertices (0,0), (4,0), (0,3).",
+          "a": "Area = 1/2 x base x height = 1/2 x 4 x 3 = 6 sq.units."
+        },
+        {
+          "mark": 8,
+          "q": "Show that points (0,0), (4,0), (4,3), (0,3) form a rectangle and find its area.",
+          "a": "Let A(0,0), B(4,0), C(4,3), D(0,3). AB=4, BC=3, CD=4, DA=3 using distance formula. Slopes: AB=0, BC undefined, so adjacent sides are perpendicular. Opposite sides are equal and parallel. Hence ABCD is a rectangle. Area = length x breadth = 4 x 3 = 12 sq.units."
+        }
+      ]
+    },
+    {
+      "name": "Trigonometry",
+      "questions": [
+        {
+          "mark": 1,
+          "q": "sin 30° =",
+          "options": [
+            "1/2",
+            "√3/2",
+            "1",
+            "0"
+          ],
+          "a": "sin 30° = 1/2."
+        },
+        {
+          "mark": 1,
+          "q": "tan 45° =",
+          "options": [
+            "1",
+            "0",
+            "√3",
+            "1/√3"
+          ],
+          "a": "tan 45° = 1."
+        },
+        {
+          "mark": 2,
+          "q": "Evaluate cos 60° + sin 30°.",
+          "a": "cos 60°=1/2 and sin 30°=1/2. Sum=1."
+        },
+        {
+          "mark": 2,
+          "q": "If tan θ = 1 and θ is acute, find θ.",
+          "a": "tan 45°=1. Therefore θ=45°."
+        },
+        {
+          "mark": 3,
+          "q": "Evaluate sin²30° + cos²30°.",
+          "a": "sin 30°=1/2, cos 30°=√3/2. sin²30°+cos²30°=1/4+3/4=1."
+        },
+        {
+          "mark": 3,
+          "q": "A pole casts shadow 10 m when angle of elevation of sun is 45°. Find height.",
+          "a": "tan 45° = height/shadow = h/10. 1=h/10. h=10 m."
+        },
+        {
+          "mark": 5,
+          "q": "From a point 20 m away from a tower, angle of elevation is 30°. Find height of tower.",
+          "a": "tan 30°=h/20. 1/√3=h/20. h=20/√3 m = 20√3/3 m."
+        },
+        {
+          "mark": 5,
+          "q": "Prove that sin²θ + cos²θ = 1 for θ=60°.",
+          "a": "sin60°=√3/2, cos60°=1/2. sin²60°+cos²60°=3/4+1/4=1. Hence verified."
+        },
+        {
+          "mark": 8,
+          "q": "A ladder 10 m long leans against a wall and makes an angle 60° with the ground. Find height reached on wall and distance from wall.",
+          "a": "Ladder is hypotenuse=10 m. Height = 10 sin60° = 10(√3/2)=5√3 m. Distance from wall = 10 cos60° = 10(1/2)=5 m. Therefore height reached is 5√3 m and foot is 5 m from wall."
+        }
+      ]
+    },
+    {
+      "name": "Mensuration",
+      "questions": [
+        {
+          "mark": 1,
+          "q": "Volume of cylinder formula is",
+          "options": [
+            "πr²h",
+            "2πrh",
+            "πrl",
+            "4πr²"
+          ],
+          "a": "Volume of cylinder = πr²h."
+        },
+        {
+          "mark": 1,
+          "q": "Curved surface area of cone is",
+          "options": [
+            "πrl",
+            "πr²h",
+            "2πrh",
+            "4πr²"
+          ],
+          "a": "CSA of cone = πrl."
+        },
+        {
+          "mark": 2,
+          "q": "Find volume of cylinder r=7 cm, h=10 cm. Use π=22/7.",
+          "a": "V=πr²h=22/7 x 7 x 7 x 10 = 1540 cm³."
+        },
+        {
+          "mark": 2,
+          "q": "Find CSA of cylinder r=3 cm, h=5 cm. Use π=22/7.",
+          "a": "CSA=2πrh=2 x 22/7 x 3 x 5 = 660/7 = 94.29 cm²."
+        },
+        {
+          "mark": 3,
+          "q": "Find TSA of cylinder r=7 cm, h=10 cm.",
+          "a": "TSA=2πr(h+r)=2 x 22/7 x 7 x (10+7)=44 x 17=748 cm²."
+        },
+        {
+          "mark": 3,
+          "q": "Find volume of cone r=7 cm, h=12 cm.",
+          "a": "V=1/3πr²h=1/3 x 22/7 x 7 x 7 x 12 = 616 cm³."
+        },
+        {
+          "mark": 5,
+          "q": "A cylindrical tank has radius 3.5 m and height 4 m. Find its capacity.",
+          "a": "V=πr²h=22/7 x 3.5 x 3.5 x 4 = 154 m³."
+        },
+        {
+          "mark": 5,
+          "q": "Find surface area of sphere radius 7 cm.",
+          "a": "Surface area = 4πr² = 4 x 22/7 x 7 x 7 = 616 cm²."
+        },
+        {
+          "mark": 8,
+          "q": "A solid cylinder of radius 7 cm and height 10 cm is melted and recast into cones of radius 7 cm and height 5 cm. Find number of cones.",
+          "a": "Volume of cylinder = πr²h = 22/7 x 7 x 7 x 10 = 1540 cm³. Volume of one cone = 1/3πr²h = 1/3 x 22/7 x 7 x 7 x 5 = 770/3 cm³. Number of cones = 1540 ÷ (770/3) = 1540 x 3 / 770 = 6."
+        }
+      ]
+    },
+    {
+      "name": "Statistics and Probability",
+      "questions": [
+        {
+          "mark": 1,
+          "q": "Mean of 2, 4, 6 is",
+          "options": [
+            "4",
+            "6",
+            "2",
+            "12"
+          ],
+          "a": "Mean=(2+4+6)/3=12/3=4."
+        },
+        {
+          "mark": 1,
+          "q": "Probability of getting head in one coin toss is",
+          "options": [
+            "1/2",
+            "1",
+            "0",
+            "2"
+          ],
+          "a": "There are two outcomes H,T. Probability of head=1/2."
+        },
+        {
+          "mark": 2,
+          "q": "Find range of 12, 18, 9, 25, 16.",
+          "a": "Range = highest - lowest = 25 - 9 = 16."
+        },
+        {
+          "mark": 2,
+          "q": "A die is rolled once. Find probability of getting an even number.",
+          "a": "Even outcomes={2,4,6}, total outcomes=6. Probability=3/6=1/2."
+        },
+        {
+          "mark": 3,
+          "q": "Find mean of 10, 12, 14, 16, 18.",
+          "a": "Sum=70, number=5. Mean=70/5=14."
+        },
+        {
+          "mark": 3,
+          "q": "Find probability of drawing a red ball from a bag with 3 red and 5 blue balls.",
+          "a": "Total balls=8. Favourable red balls=3. Probability=3/8."
+        },
+        {
+          "mark": 5,
+          "q": "Find variance of 2, 4, 6.",
+          "a": "Mean=4. Deviations: -2,0,2. Squares:4,0,4. Variance=(4+0+4)/3=8/3."
+        },
+        {
+          "mark": 5,
+          "q": "Two coins are tossed. Find probability of getting exactly one head.",
+          "a": "Sample space={HH,HT,TH,TT}. Exactly one head={HT,TH}. Probability=2/4=1/2."
+        },
+        {
+          "mark": 8,
+          "q": "Find mean, variance and standard deviation of 2, 3, 5, 7, 8.",
+          "a": "Mean=(2+3+5+7+8)/5=25/5=5. Deviations: -3,-2,0,2,3. Squares:9,4,0,4,9. Variance=(26)/5=5.2. Standard deviation=√5.2≈2.28."
+        }
+      ]
+    }
+  ]
+}

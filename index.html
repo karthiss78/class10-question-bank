@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class 10 Question Bank</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Tamil Nadu Class 10</p>
+        <h1>Question Bank</h1>
+      </div>
+      <div class="header-actions">
+        <button id="showModel" type="button">Show public exam model</button>
+        <button id="printModel" type="button">Print model paper</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Question filters">
+        <label>
+          Subject
+          <select id="subjectSelect"></select>
+        </label>
+        <label>
+          Question type
+          <select id="typeSelect">
+            <option value="all">All types</option>
+            <option value="One mark bank">One mark bank - 500</option>
+            <option value="2 mark">2 mark</option>
+            <option value="3 mark">3 mark</option>
+            <option value="5 mark">5 mark</option>
+            <option value="8 mark">8 mark</option>
+            <option value="Model exam">Model exam - 50 questions</option>
+          </select>
+        </label>
+        <label>
+          Model set
+          <select id="modelSetSelect">
+            <option value="1">Set 1</option>
+            <option value="2">Set 2</option>
+            <option value="3">Set 3</option>
+            <option value="4">Set 4</option>
+            <option value="5">Set 5</option>
+            <option value="6">Set 6</option>
+            <option value="7">Set 7</option>
+            <option value="8">Set 8</option>
+            <option value="9">Set 9</option>
+            <option value="10">Set 10</option>
+          </select>
+        </label>
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="Search question, answer, lesson..." />
+        </label>
+      </section>
+
+      <section class="summary">
+        <div>
+          <span id="questionCount">0</span>
+          <small>Questions shown</small>
+        </div>
+        <div>
+          <span>500</span>
+          <small>Total questions</small>
+        </div>
+        <div>
+          <span>5</span>
+          <small>Subjects</small>
+        </div>
+      </section>
+
+      <section class="question-list" id="questionList"></section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
