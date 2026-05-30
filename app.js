@@ -1477,12 +1477,10 @@ function formatAnswer(question) {
 }
 
 function answerHtml(question) {
-  const isMaths = question.subjectId === "maths";
   return `
     <button class="answer-toggle" type="button">See answer</button>
     <div class="answer" hidden>
-      ${isMaths ? '' : `<div style="margin-bottom: 8px;"><strong>How to answer:</strong> ${escapeHtml(answerDepth(question.modelMark || question.mark))}</div>`}
-      <div>${isMaths ? '' : '<strong>Answer:</strong> '}${formatAnswer(question)}</div>
+      <div>${formatAnswer(question)}</div>
     </div>
   `;
 }
