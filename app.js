@@ -1368,20 +1368,33 @@ function filteredQuestions() {
 
 function formatAnswer(question) {
   const markValue = question.modelMark || question.mark;
-  if (markValue !== 8) return question.answer;
-  if (question.subjectId === "maths") {
-    return question.answer + "\n\nStep 1: Write the given values clearly.\nStep 2: Write the correct formula/theorem.\nStep 3: Substitute values carefully.\nStep 4: Simplify step by step without skipping working.\nStep 5: Write the final answer with correct unit or statement.\n\nFor 8 marks, show every calculation and reason. Do not write only the final answer.";
+  let ans = escapeHtml(question.answer);
+
+  if (question.subjectId === "maths" && markValue > 1) {
+    const steps = question.answer.split(". ").filter(s => s.trim().length > 0);
+    if (steps.length > 1) {
+      ans = '<div style="margin-top: 8px; display: grid; gap: 8px;">' + steps.map((step, idx) => `<div><strong>Step ${idx + 1}:</strong> ${escapeHtml(step)}${step.endsWith('.') ? '' : '.'}</div>`).join("") + '</div>';
+    }
   }
-  return "This is an 8-mark long-answer question. Prepare the final answer directly from the textbook lesson.\n\nSuggested answer structure:\n1. Introduction: define or introduce the topic in 2 to 3 lines.\n2. Main point 1: write the first important textbook point with explanation.\n3. Main point 2: write the second important textbook point with example.\n4. Main point 3: write the third important textbook point with supporting detail.\n5. Main point 4: add cause/effect/importance/application as needed.\n6. Conclusion: end with the lesson message or final result.\n\nDo not memorize this generic guide as the final answer. Use the exact textbook content for scoring full marks.";
+
+  if (markValue === 8) {
+    if (question.subjectId === "maths") {
+      ans += "<br><br><strong>Note for 8 marks:</strong> Write the given values clearly. Write the correct formula/theorem. Substitute values carefully. Simplify step by step without skipping working. Write the final answer with correct unit or statement. Show every calculation and reason.";
+    } else {
+      ans = "This is an 8-mark long-answer question. Prepare the final answer directly from the textbook lesson.<br><br>Suggested answer structure:<br>1. Introduction: define or introduce the topic in 2 to 3 lines.<br>2. Main point 1: write the first important textbook point with explanation.<br>3. Main point 2: write the second important textbook point with example.<br>4. Main point 3: write the third important textbook point with supporting detail.<br>5. Main point 4: add cause/effect/importance/application as needed.<br>6. Conclusion: end with the lesson message or final result.<br><br>Do not memorize this generic guide as the final answer. Use the exact textbook content for scoring full marks.";
+    }
+  }
+
+  return ans;
 }
 
 function answerHtml(question) {
   return `
     <button class="answer-toggle" type="button">See answer</button>
-    <p class="answer" hidden>
-      <strong>How to answer:</strong> ${escapeHtml(answerDepth(question.modelMark || question.mark))}<br />
-      <strong>Answer:</strong> ${escapeHtml(formatAnswer(question))}
-    </p>
+    <div class="answer" hidden>
+      <div style="margin-bottom: 8px;"><strong>How to answer:</strong> ${escapeHtml(answerDepth(question.modelMark || question.mark))}</div>
+      <div><strong>Answer:</strong> ${formatAnswer(question)}</div>
+    </div>
   `;
 }
 
