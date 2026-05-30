@@ -1467,7 +1467,7 @@ function formatAnswer(question) {
 
   if (markValue > 1) {
     const steps = question.answer.split(". ").filter(s => s.trim().length > 0);
-    if (steps.length > 1) {
+    if (steps.length >= 1) {
       const label = question.subjectId === "maths" ? "Step" : "Point";
       ans = '<div style="margin-top: 8px; display: grid; gap: 8px;">' + steps.map((step, idx) => `<div><strong>${label} ${idx + 1}:</strong> ${escapeHtml(step)}${step.endsWith('.') ? '' : '.'}</div>`).join("") + '</div>';
     }
