@@ -956,6 +956,68 @@ const realMathsBank = [
   }
 ];
 
+const realScienceBank = [
+  {
+    subjectId: "science", subject: "Science", chapter: "Laws of Motion", lesson: "Laws of Motion",
+    type: "One mark bank", mark: 1,
+    question: "Inertia of a body depends on",
+    answer: "Mass of the object.",
+    options: ["Weight of the object", "Acceleration due to gravity", "Mass of the object", "Both mass and weight"]
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Laws of Motion", lesson: "Laws of Motion",
+    type: "2 mark", mark: 2,
+    question: "State Newton's second law of motion.",
+    answer: "The force acting on a body is directly proportional to the rate of change of linear momentum of the body.",
+    options: null
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Optics", lesson: "Optics",
+    type: "One mark bank", mark: 1,
+    question: "The refractive index of glass is",
+    answer: "1.5",
+    options: ["1.0", "1.33", "1.5", "2.42"]
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Optics", lesson: "Optics",
+    type: "5 mark", mark: 5,
+    question: "Differentiate between convex and concave lenses.",
+    answer: "Convex lens is thicker at the center, converges light rays. Concave lens is thinner at the center, diverges light rays.",
+    options: null
+  }
+];
+
+const realSocialBank = [
+  {
+    subjectId: "social", subject: "Social Science", chapter: "History - Nationalism", lesson: "History - Nationalism",
+    type: "One mark bank", mark: 1,
+    question: "Who founded the Indian National Congress?",
+    answer: "A.O. Hume",
+    options: ["W.C. Bonnerjee", "A.O. Hume", "Mahatma Gandhi", "Jawaharlal Nehru"]
+  },
+  {
+    subjectId: "social", subject: "Social Science", chapter: "Geography - Resources", lesson: "Geography - Resources",
+    type: "2 mark", mark: 2,
+    question: "What is meant by resource planning?",
+    answer: "Resource planning is a widely accepted strategy for judicious use of resources.",
+    options: null
+  },
+  {
+    subjectId: "social", subject: "Social Science", chapter: "Civics - Constitution", lesson: "Civics - Constitution",
+    type: "One mark bank", mark: 1,
+    question: "The Constitution of India was adopted on",
+    answer: "26 November 1949",
+    options: ["26 January 1950", "15 August 1947", "26 November 1949", "2 October 1948"]
+  },
+  {
+    subjectId: "social", subject: "Social Science", chapter: "Economics - Development", lesson: "Economics - Development",
+    type: "5 mark", mark: 5,
+    question: "Explain the meaning of sustainable development.",
+    answer: "Sustainable development means development should take place without damaging the environment, and development in the present should not compromise with the needs of future generations.",
+    options: null
+  }
+];
+
 const modelPattern = [
   { title: "Part I - 1 Mark", instruction: "Choose the best answer. 20 x 1 = 20", count: 20, mark: 1 },
   { title: "Part II - 2 Mark", instruction: "Answer in short steps. 10 x 2 = 20", count: 10, mark: 2 },
@@ -1249,7 +1311,12 @@ function buildNonMathBank(subject) {
 }
 
 function buildAllQuestions() {
-  return subjects.flatMap((subject) => (subject.id === "maths" ? realMathsBank.map((q, index) => ({ ...q, questionNo: index + 1 })) : buildNonMathBank(subject)));
+  return subjects.flatMap((subject) => {
+    if (subject.id === "maths") return realMathsBank.map((q, index) => ({ ...q, questionNo: index + 1 }));
+    if (subject.id === "science") return realScienceBank.map((q, index) => ({ ...q, questionNo: index + 1 })).concat(buildNonMathBank(subject).slice(realScienceBank.length));
+    if (subject.id === "social") return realSocialBank.map((q, index) => ({ ...q, questionNo: index + 1 })).concat(buildNonMathBank(subject).slice(realSocialBank.length));
+    return buildNonMathBank(subject);
+  });
 }
 
 const allQuestions = buildAllQuestions();
@@ -1265,10 +1332,24 @@ function uniqueQuestions(questions) {
   });
 }
 
+let bookmarks = new Set(JSON.parse(localStorage.getItem('questionBookmarks') || '[]'));
+const bookmarkFilter = document.querySelector("#bookmarkFilter");
+
+function toggleBookmark(id) {
+  if (bookmarks.has(id)) {
+    bookmarks.delete(id);
+  } else {
+    bookmarks.add(id);
+  }
+  localStorage.setItem('questionBookmarks', JSON.stringify([...bookmarks]));
+}
+
 function filteredQuestions() {
   const subjectId = subjectSelect.value;
   const type = typeSelect.value;
   const search = searchInput.value.trim().toLowerCase();
+  const showBookmarksOnly = bookmarkFilter ? bookmarkFilter.checked : false;
+
   return uniqueQuestions(allQuestions.filter((question) => {
     const typeMatches =
       type === "all" ||
@@ -1278,7 +1359,9 @@ function filteredQuestions() {
     const searchMatches =
       !search ||
       `${question.chapter} ${question.question} ${question.answer}`.toLowerCase().includes(search);
-    return question.subjectId === subjectId && typeMatches && searchMatches;
+    const bookmarkMatches = !showBookmarksOnly || bookmarks.has(question.id);
+
+    return question.subjectId === subjectId && typeMatches && searchMatches && bookmarkMatches;
   }));
 }
 
@@ -1303,8 +1386,12 @@ function answerHtml(question) {
 }
 
 function questionCard(question, number = question.questionNo) {
+  const isBookmarked = bookmarks.has(question.id);
   return `
-    <article class="question-card ${question.mark === 1 ? "one-mark-card" : ""}">
+    <article class="question-card ${question.mark === 1 ? "one-mark-card" : ""}" data-id="${question.id}">
+      <button type="button" class="bookmark-btn ${isBookmarked ? 'active' : ''}" aria-label="Bookmark this question">
+        <i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
+      </button>
       <div class="question-meta">
         <span class="pill">${escapeHtml(question.chapter)}</span>
         <span class="pill">${question.modelMark || question.mark} mark question</span>
@@ -1313,7 +1400,9 @@ function questionCard(question, number = question.questionNo) {
       <h2>${number}. ${escapeHtml(question.question)}</h2>
       ${
         question.options
-          ? `<ol class="mcq-options" type="A">${question.options.map((option) => `<li>${escapeHtml(option)}</li>`).join("")}</ol>`
+          ? `<ul class="mcq-options" data-answer="${escapeHtml(question.answer.split('. ')[0])}">
+               ${question.options.map((option) => `<li><button class="mcq-option-btn" data-value="${escapeHtml(option)}">${escapeHtml(option)}</button></li>`).join("")}
+             </ul>`
           : ""
       }
       ${answerHtml(question)}
@@ -1429,6 +1518,7 @@ renderQuestions();
 subjectSelect.addEventListener("change", renderQuestions);
 typeSelect.addEventListener("change", renderQuestions);
 searchInput.addEventListener("input", renderQuestions);
+if (bookmarkFilter) bookmarkFilter.addEventListener("change", renderQuestions);
 showModel?.addEventListener("click", renderModelPaper);
 modelSetSelect?.addEventListener("change", () => {
   if (typeSelect.value === "Model exam") renderModelPaper();
@@ -1436,6 +1526,60 @@ modelSetSelect?.addEventListener("change", () => {
 printModel.addEventListener("click", printModelTest);
 
 questionList.addEventListener("click", (event) => {
+  const bookmarkBtn = event.target.closest(".bookmark-btn");
+  if (bookmarkBtn) {
+    const card = bookmarkBtn.closest(".question-card");
+    const id = card.dataset.id;
+    toggleBookmark(id);
+    const isBookmarked = bookmarks.has(id);
+    bookmarkBtn.classList.toggle("active", isBookmarked);
+    bookmarkBtn.innerHTML = `<i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>`;
+    if (bookmarkFilter && bookmarkFilter.checked && !isBookmarked) {
+      renderQuestions(); // Remove from view if filtering
+    }
+    return;
+  }
+
+  const optionBtn = event.target.closest(".mcq-option-btn");
+  if (optionBtn) {
+    const container = optionBtn.closest(".mcq-options");
+    const correctAnswerText = container.dataset.answer;
+    
+    // Disable all options
+    const allButtons = container.querySelectorAll(".mcq-option-btn");
+    allButtons.forEach(btn => btn.disabled = true);
+    
+    // Highlight selected
+    const selectedValue = optionBtn.dataset.value;
+    
+    // Simple correct check (for generated options, usually exact match or first part matches)
+    const isCorrect = correctAnswerText.includes(selectedValue);
+    
+    if (isCorrect) {
+      optionBtn.classList.add("quiz-correct");
+    } else {
+      optionBtn.classList.add("quiz-incorrect");
+      // Find and highlight correct one
+      allButtons.forEach(btn => {
+        if (correctAnswerText.includes(btn.dataset.value)) {
+          btn.classList.add("quiz-correct");
+        }
+      });
+    }
+    
+    // Auto-reveal answer block
+    const card = optionBtn.closest(".question-card");
+    const answerToggle = card.querySelector(".answer-toggle");
+    if (answerToggle) {
+      const answer = answerToggle.nextElementSibling;
+      if (answer && answer.hasAttribute("hidden")) {
+        answer.removeAttribute("hidden");
+        answerToggle.textContent = "Close answer";
+      }
+    }
+    return;
+  }
+
   const button = event.target.closest(".answer-toggle");
   if (!button) return;
   const answer = button.nextElementSibling;
