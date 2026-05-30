@@ -984,6 +984,55 @@ const realScienceBank = [
     question: "Differentiate between convex and concave lenses.",
     answer: "Convex lens is thicker at the center, converges light rays. Concave lens is thinner at the center, diverges light rays.",
     options: null
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Electricity", lesson: "Electricity",
+    type: "2 mark", mark: 2,
+    question: "State Ohm's Law.",
+    answer: "At a constant temperature, the steady current 'I' flowing through a conductor is directly proportional to the potential difference 'V' between the two ends of the conductor. V = IR.",
+    options: null
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Acoustics", lesson: "Acoustics",
+    type: "One mark bank", mark: 1,
+    question: "What is the minimum distance required to hear an echo?",
+    answer: "17.2 m",
+    options: ["17.2 m", "34.4 m", "10 m", "20 m"]
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Atoms and Molecules", lesson: "Atoms and Molecules",
+    type: "5 mark", mark: 5,
+    question: "Write any five postulates of modern atomic theory.",
+    answer: "An atom is no longer indivisible (discovery of electrons, protons, and neutrons). Atoms of the same element may have different atomic masses (isotopes). Atoms of different elements may have same atomic masses (isobars). Atoms of one element can be transmuted into atoms of other elements (artificial transmutation). The ratio of atoms in a molecule may be fixed and integral but may not be simple (e.g., C12H22O11).",
+    options: null
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Solutions", lesson: "Solutions",
+    type: "2 mark", mark: 2,
+    question: "Define solubility.",
+    answer: "Solubility is defined as the number of grams of a solute that can be dissolved in 100g of a solvent to form a saturated solution at a given temperature and pressure.",
+    options: null
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Genetics", lesson: "Genetics",
+    type: "One mark bank", mark: 1,
+    question: "Who is known as the Father of Genetics?",
+    answer: "Gregor Johann Mendel",
+    options: ["Charles Darwin", "Gregor Johann Mendel", "Watson and Crick", "Jean Baptiste Lamarck"]
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Plant Anatomy", lesson: "Plant Anatomy",
+    type: "5 mark", mark: 5,
+    question: "Differentiate between Monocot root and Dicot root.",
+    answer: "In dicot root, the xylem is usually tetrarch (four xylem bundles), whereas in monocot root, it is polyarch (many xylem bundles). Pith is absent or poorly developed in dicot root, but it is large and well-developed in monocot root. Secondary growth occurs in dicot roots, but it is absent in monocot roots. The pericycle produces lateral roots and vascular cambium in dicots, whereas it only produces lateral roots in monocots.",
+    options: null
+  },
+  {
+    subjectId: "science", subject: "Science", chapter: "Transportation in Plants and Animals", lesson: "Transportation in Plants and Animals",
+    type: "8 mark", mark: 8,
+    question: "Describe the structure of the human heart with its functions.",
+    answer: "The human heart is a muscular pumping organ located in the thoracic cavity between the two lungs. It is enclosed by a double-walled membrane called the pericardium. The heart is divided into four chambers: two upper auricles (atria) and two lower ventricles. The right atrium receives deoxygenated blood from the body via the vena cava. The right ventricle pumps it to the lungs for oxygenation through the pulmonary artery. The left atrium receives oxygenated blood from the lungs via the pulmonary veins. The left ventricle pumps this oxygenated blood to all parts of the body through the aorta. Valves (tricuspid, bicuspid, and semilunar) prevent the backward flow of blood. The rhythmic contraction and relaxation of the heart muscle ensures continuous blood circulation.",
+    options: null
   }
 ];
 
