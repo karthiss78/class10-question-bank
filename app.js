@@ -1018,6 +1018,51 @@ const realSocialBank = [
   }
 ];
 
+const realEnglishBank = [
+  {
+    subjectId: "english", subject: "English", chapter: "Vocabulary", lesson: "Vocabulary",
+    type: "One mark bank", mark: 1,
+    question: "Choose the appropriate synonym for the italicised word: The young seagull was alone on his *ledge*.",
+    answer: "A narrow shelf that juts out from a vertical surface",
+    options: ["narrow shelf", "deep valley", "wide ocean", "tall tree"]
+  },
+  {
+    subjectId: "english", subject: "English", chapter: "Prose", lesson: "Prose",
+    type: "2 mark", mark: 2,
+    question: "Why did the young seagull fail to fly?",
+    answer: "The young seagull failed to fly because he lacked confidence. He was afraid that his wings would not support him, so he hesitated to take the plunge.",
+    options: null
+  },
+  {
+    subjectId: "english", subject: "English", chapter: "Grammar - Voice", lesson: "Grammar - Voice",
+    type: "2 mark", mark: 2,
+    question: "Change into passive voice: The teacher is correcting the answer scripts.",
+    answer: "The answer scripts are being corrected by the teacher.",
+    options: null
+  },
+  {
+    subjectId: "english", subject: "English", chapter: "Poetry", lesson: "Poetry",
+    type: "3 mark", mark: 3,
+    question: "Explain with reference to the context: 'Let me but live my life from year to year, With forward face and unreluctant soul.'",
+    answer: "Reference: These lines are from the poem 'Life' written by Henry Van Dyke. Context: The poet says these words while expressing how he wants to live his life. Explanation: The poet wants to live his life looking forward, with courage and dedication, without hesitation.",
+    options: null
+  },
+  {
+    subjectId: "english", subject: "English", chapter: "Prose", lesson: "Prose",
+    type: "5 mark", mark: 5,
+    question: "Describe the funny incident that caused the confusion in the house in 'The Night the Ghost Got In'.",
+    answer: "The author heard footsteps in the dining room and thought it was a ghost. He woke his brother Herman up, and they heard the steps moving around the dining table. They went to their mother's room. Their mother thought it was burglars and threw a shoe through the neighbour's window to get help. The neighbour called the police. The police arrived, broke down the door, and searched the house, creating chaos. Finally, grandfather shot at the police thinking they were deserters. The whole confusion was simply caused by grandfather walking around the dining table at night for water.",
+    options: null
+  },
+  {
+    subjectId: "english", subject: "English", chapter: "Supplementary", lesson: "Supplementary",
+    type: "8 mark", mark: 8,
+    question: "Write a detailed paragraph on how the tempest was brought to an end by Prospero.",
+    answer: "Prospero commanded Ariel to bring the tempest to an end. After causing the shipwreck, Ariel separated the passengers into different groups on the island. Prospero ensured that no one was harmed during the storm. He used the tempest only to bring his enemies (Alonso, Antonio) to the island to make them realize their guilt. Once his purpose was achieved and the enemies repented, he forgave them, set Ariel free, and promised to break his magic staff and return to Milan.",
+    options: null
+  }
+];
+
 const modelPattern = [
   { title: "Part I - 1 Mark", instruction: "Choose the best answer. 20 x 1 = 20", count: 20, mark: 1 },
   { title: "Part II - 2 Mark", instruction: "Answer in short steps. 10 x 2 = 20", count: 10, mark: 2 },
@@ -1315,6 +1360,7 @@ function buildAllQuestions() {
     if (subject.id === "maths") return realMathsBank.map((q, index) => ({ ...q, questionNo: index + 1 }));
     if (subject.id === "science") return realScienceBank.map((q, index) => ({ ...q, questionNo: index + 1 })).concat(buildNonMathBank(subject).slice(realScienceBank.length));
     if (subject.id === "social") return realSocialBank.map((q, index) => ({ ...q, questionNo: index + 1 })).concat(buildNonMathBank(subject).slice(realSocialBank.length));
+    if (subject.id === "english") return realEnglishBank.map((q, index) => ({ ...q, questionNo: index + 1 })).concat(buildNonMathBank(subject).slice(realEnglishBank.length));
     return buildNonMathBank(subject);
   });
 }
