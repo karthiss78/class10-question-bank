@@ -1407,10 +1407,10 @@ function buildNonMathBank(subject) {
 function buildAllQuestions() {
   return subjects.flatMap((subject) => {
     if (subject.id === "maths") return realMathsBank.map((q, index) => ({ ...q, questionNo: index + 1 }));
-    if (subject.id === "science") return realScienceBank.map((q, index) => ({ ...q, questionNo: index + 1 })).concat(buildNonMathBank(subject).slice(realScienceBank.length));
-    if (subject.id === "social") return realSocialBank.map((q, index) => ({ ...q, questionNo: index + 1 })).concat(buildNonMathBank(subject).slice(realSocialBank.length));
-    if (subject.id === "english") return realEnglishBank.map((q, index) => ({ ...q, questionNo: index + 1 })).concat(buildNonMathBank(subject).slice(realEnglishBank.length));
-    return buildNonMathBank(subject);
+    if (subject.id === "science") return realScienceBank.map((q, index) => ({ ...q, questionNo: index + 1 }));
+    if (subject.id === "social") return realSocialBank.map((q, index) => ({ ...q, questionNo: index + 1 }));
+    if (subject.id === "english") return realEnglishBank.map((q, index) => ({ ...q, questionNo: index + 1 }));
+    return [];
   });
 }
 
