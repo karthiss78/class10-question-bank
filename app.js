@@ -1472,10 +1472,6 @@ function formatAnswer(question) {
     }
   }
 
-  if (markValue === 8 && question.subjectId !== "maths") {
-    ans = "This is an 8-mark long-answer question. Prepare the final answer directly from the textbook lesson.<br><br>Suggested answer structure:<br>1. Introduction: define or introduce the topic in 2 to 3 lines.<br>2. Main point 1: write the first important textbook point with explanation.<br>3. Main point 2: write the second important textbook point with example.<br>4. Main point 3: write the third important textbook point with supporting detail.<br>5. Main point 4: add cause/effect/importance/application as needed.<br>6. Conclusion: end with the lesson message or final result.<br><br>Do not memorize this generic guide as the final answer. Use the exact textbook content for scoring full marks.";
-  }
-
   return ans;
 }
 
