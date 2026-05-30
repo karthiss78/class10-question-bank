@@ -286,7 +286,7 @@ const realMathsBank = [
     "type": "5 mark",
     "mark": 5,
     "question": "Find the 12th term from the end of AP -2, -4, -6, ..., -100.",
-    "answer": "AP is -2,-4,...,-100. From the end, reverse AP is -100,-98,-96,... d=2. 12th term from end = -100 + 11(2) = -78.",
+    "answer": "First, write down the given Arithmetic Progression: -2, -4, -6, ..., -100. To find a term from the end, the easiest method is to reverse the entire AP so the last term becomes the first term. The reversed AP is: -100, -98, -96, ... . In this reversed AP, the first term (a) is -100. The common difference (d) can be found by subtracting the first term from the second: d = -98 - (-100) = 2. We need to find the 12th term, so we use the nth term formula: t_n = a + (n - 1)d. Substitute the values a = -100, d = 2, and n = 12 into the formula. t_12 = -100 + (12 - 1)2. t_12 = -100 + 11(2). t_12 = -100 + 22. Therefore, t_12 = -78. The 12th term from the end of the AP is -78.",
     "options": null
   },
   {
